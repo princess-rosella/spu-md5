@@ -1,0 +1,31 @@
+{
+  "name": "spu-md5",
+  "version": "0.0.1",
+  "description": "JavaScript ArrayBuffer MD5",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "prepare": "tsc -p lib.tsconfig.json",
+    "test": "tsc -p tests.tsconfig.json && node tests/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/princess-rosella/spu-md5.git"
+  },
+  "keywords": [
+    "md5",
+    "typescript",
+    "arraybuffer"
+  ],
+  "author": "Princess Rosella <princess.rosella.of.daventry@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/princess-rosella/spu-md5/issues"
+  },
+  "homepage": "https://github.com/princess-rosella/spu-md5#readme",
+  "devDependencies": {
+    "@types/node": "^10.12.0",
+    "typescript": "^3.1.0"
+  },
+  "dependencies": {}
+}
