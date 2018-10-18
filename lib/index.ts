@@ -193,7 +193,7 @@ export class MD5 {
         else if (Buffer.isBuffer(data))
             data = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
 
-        return this.dynamicUpdate(data);
+        return this.update(data);
     }
 
     /**
