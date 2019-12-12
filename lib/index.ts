@@ -185,13 +185,14 @@ export class MD5 {
      * @param data Data to hash
      * @see MD5.update
      */
-    dynamicUpdate(data: Uint8Array | DataView | ArrayBuffer | Buffer): void {
+    dynamicUpdate(data: Uint8Array | DataView | ArrayBuffer): void {
         if (data instanceof DataView)
             data = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
         else if (data instanceof ArrayBuffer)
             data = new Uint8Array(data);
-        else if (Buffer.isBuffer(data))
-            data = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
+
+        if (!(data instanceof Uint8Array))
+            throw new Error(`Expected a Uint8Array, a DataView or an ArrayBuffer. Received ${data.constructor.name}`);
 
         return this.update(data);
     }
@@ -291,7 +292,7 @@ export class MD5 {
         return transform(this.block, this.hash);
     }
 
-    static process(data: Uint8Array | DataView | ArrayBuffer | Buffer): string {
+    static process(data: Uint8Array | DataView | ArrayBuffer): string {
         const md5 = new MD5();
         md5.dynamicUpdate(data);
         return md5.toString();

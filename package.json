@@ -1,6 +1,6 @@
 {
   "name": "spu-md5",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JavaScript ArrayBuffer MD5",
   "main": "index.js",
   "types": "index.d.ts",
@@ -24,8 +24,7 @@
   },
   "homepage": "https://github.com/princess-rosella/spu-md5#readme",
   "devDependencies": {
-    "@types/node": "^10.12.0",
-    "typescript": "^3.1.0"
+    "typescript": "^3.7.0"
   },
   "dependencies": {}
 }
